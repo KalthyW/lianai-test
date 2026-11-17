@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>💗恋爱脑指数 · 你上头到几分</title>
+<title>🏮宫斗生存 · 你能活到第几集</title>
 <style>
   :root{
     --paper:#f2ebdd; --ink:#1c1a16; --red:#b03a2e; --gray:#7d766a;
@@ -134,60 +134,142 @@
 #s-rel{display:none!important}
 .invite-hint{display:none!important}
 #relHex{display:none}
-/* 恋爱脑主题：奶油底 + 玫瑰粉，去宫斗感 */
+#resPortrait{width:100%;display:block;border:1px solid rgba(201,163,94,.40);object-fit:cover;max-height:430px;object-position:center 18%;}
+.res-portrait{position:relative;margin:22px 0 4px;}
+.res-portrait:after{content:"";position:absolute;left:0;right:0;bottom:0;height:38%;background:linear-gradient(180deg,transparent,rgba(20,16,14,.82));pointer-events:none;}
+/* ============================================================
+   宫斗主题皮肤（build_test2.py 注入）
+   深墨底 + 宫墙红 + 金线；封面加屋檐/灯笼/宫墙，答题与结果加窗棂纹
+   ============================================================ */
 
 :root{
-  --paper:#fbf4f1;
-  --ink:#2c1f24;
-  --red:#c9546f;
-  --gray:#9a8188;
-  --hair:rgba(44,31,36,.14);
+  --paper:#14100e;
+  --ink:#f1e5d0;
+  --red:#b23a2b;
+  --gray:#a28d74;
+  --hair:rgba(241,229,208,.16);
 }
 
-body{background:#eddcd9;}
+body{background:#080605;}
 
 .app{
-  background-color:#fbf4f1;
+  background-color:#14100e;
   background-image:
-    radial-gradient(110% 45% at 50% 0%, rgba(201,84,111,.16), transparent 60%),
-    radial-gradient(90% 40% at 50% 100%, rgba(232,160,178,.18), transparent 62%),
-    repeating-linear-gradient(0deg, rgba(44,31,36,.014) 0 1px, transparent 1px 3px);
-  box-shadow:0 0 80px rgba(120,70,80,.18);
+    radial-gradient(120% 55% at 50% 0%, rgba(178,58,43,.28), transparent 62%),
+    radial-gradient(90% 40% at 50% 100%, rgba(120,86,40,.20), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(241,229,208,.020) 0 1px, transparent 1px 3px);
+  box-shadow:0 0 90px rgba(0,0,0,.75);
+  position:relative;
 }
 
-.seal{background:linear-gradient(180deg,#d4627c,#b03a5a);color:#fff6f7;}
-.cover-title h1{color:#2c1f24;}
-.cover-title .sub{color:#9a8188;}
-.tri{color:rgba(201,84,111,.45);}
+/* ---------- 封面：屋檐 + 灯笼 + 宫墙 ---------- */
+.cover{position:relative;overflow:hidden;padding-top:34px;padding-bottom:158px;}
+.cover::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:168px;z-index:0;
+  background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 168' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='r' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%233c1512'/%3E%3Cstop offset='1' stop-color='%23140b09'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0,54 C48,50 66,26 104,26 L296,26 C334,26 352,50 400,54 L400,10 L0,10 Z' fill='url(%23r)'/%3E%3Cpath d='M0,54 C48,50 66,26 104,26 L296,26 C334,26 352,50 400,54' fill='none' stroke='%23c9a35e' stroke-opacity='.55' stroke-width='1.4'/%3E%3Cpath d='M104,26 L104,4 L296,4 L296,26' fill='%2324100d' stroke='%23c9a35e' stroke-opacity='.35' stroke-width='1'/%3E%3Cg stroke='%23c9a35e' stroke-opacity='.16' stroke-width='1'%3E%3Cpath d='M120,26 L120,8'/%3E%3Cpath d='M150,26 L150,8'/%3E%3Cpath d='M180,26 L180,8'/%3E%3Cpath d='M210,26 L210,8'/%3E%3Cpath d='M240,26 L240,8'/%3E%3Cpath d='M270,26 L270,8'/%3E%3C/g%3E%3C/svg%3E") center top/100% 168px no-repeat;
+  z-index:0;
+}
+.cover::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:120px;z-index:0;
+  background:
+    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 150' preserveAspectRatio='none'%3E%3Crect x='0' y='38' width='400' height='112' fill='%23241512'/%3E%3Crect x='0' y='30' width='400' height='10' fill='%238f2b21'/%3E%3Crect x='0' y='40' width='400' height='2' fill='%23c9a35e' fill-opacity='.5'/%3E%3Cg fill='%23c9a35e' fill-opacity='.38'%3E%3Ccircle cx='40' cy='86' r='4'/%3E%3Ccircle cx='100' cy='86' r='4'/%3E%3Ccircle cx='160' cy='86' r='4'/%3E%3Ccircle cx='220' cy='86' r='4'/%3E%3Ccircle cx='280' cy='86' r='4'/%3E%3Ccircle cx='340' cy='86' r='4'/%3E%3Ccircle cx='40' cy='126' r='4'/%3E%3Ccircle cx='100' cy='126' r='4'/%3E%3Ccircle cx='160' cy='126' r='4'/%3E%3Ccircle cx='220' cy='126' r='4'/%3E%3Ccircle cx='280' cy='126' r='4'/%3E%3Ccircle cx='340' cy='126' r='4'/%3E%3C/g%3E%3C/svg%3E") center bottom/100% 120px no-repeat;
+  z-index:0;
+}
+.cover > *{position:relative;z-index:1;}
+
+/* 两盏灯笼 */
+.ring::before,.ring::after{
+  content:"";position:absolute;width:34px;height:46px;z-index:1;
+  background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 62'%3E%3Cpath d='M17,0 L17,10' stroke='%23c9a35e' stroke-width='1'/%3E%3Crect x='11' y='10' width='12' height='3' fill='%23c9a35e'/%3E%3Cellipse cx='17' cy='30' rx='15' ry='17' fill='%23b23a2b'/%3E%3Cellipse cx='17' cy='30' rx='15' ry='17' fill='none' stroke='%23e8c98a' stroke-opacity='.45'/%3E%3Cpath d='M4,30 L30,30' stroke='%23e8c98a' stroke-opacity='.35'/%3E%3Crect x='12' y='46' width='10' height='3' fill='%23c9a35e'/%3E%3Cpath d='M17,49 L17,58' stroke='%23c9a35e' stroke-width='1.5'/%3E%3C/svg%3E") center/contain no-repeat;
+  opacity:.85;
+}
+.ring::before{left:-14px;top:-46px;}
+.ring::after{right:-14px;top:-46px;}
+
+/* ---------- 通用配色 ---------- */
+.topbar .tiny{color:#8d7a68;}
+.seal{background:linear-gradient(180deg,#c0392b,#8e2b22);color:#f6ead6;box-shadow:0 0 0 1px rgba(201,163,94,.35);}
+.tri{color:rgba(241,229,208,.34);}
+.cover-title h1{color:#f6ead6;text-shadow:0 3px 24px rgba(0,0,0,.75);}
+.cover-title .sub{color:#c0a888;letter-spacing:.34em;}
+.cover-note{color:#8d7a68;}
 
 .btn-dark{
-  background:linear-gradient(180deg,#d4627c,#b03a5a);
-  color:#fff7f8;
-  box-shadow:0 10px 26px rgba(176,58,90,.28);
+  background:linear-gradient(180deg,#bf3a2b,#8b291f);
+  color:#fff6e8;letter-spacing:.34em;
+  box-shadow:0 10px 28px rgba(150,44,34,.45), inset 0 1px 0 rgba(255,255,255,.14);
 }
 
-.q:before{background:linear-gradient(90deg,#d4627c,#e8a0b2);}
-.tick.on{background:#c9546f;}
-.opt{border:1px solid rgba(44,31,36,.22);background:rgba(255,255,255,.55);color:#2c1f24;}
-.opt .lt{color:#c9546f;}
-.opt.sel{background:linear-gradient(180deg,#d4627c,#b03a5a);border-color:#b03a5a;color:#fff7f8;}
-.opt.sel .lt{color:#ffe3ea;}
+/* ---------- 答题 ---------- */
+.quiz{position:relative;}
+.quiz::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.30;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(201,163,94,.10) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(-45deg, rgba(201,163,94,.10) 0 1px, transparent 1px 34px);
+}
+.quiz > *{position:relative;z-index:1;}
+.q{color:#f4e8d4;}
+.q:before{background:linear-gradient(90deg,#c0392b,#c9a35e);}
+.quiz-top .no{color:#a28d74;}
+.tick{background:rgba(241,229,208,.14);}
+.tick.on{background:#c0392b;}
+.opt{
+  border:1px solid rgba(241,229,208,.22);
+  background:rgba(241,229,208,.035);
+  color:#efe3cf;
+}
+.opt .lt{color:#c9a35e;}
+.opt.sel{background:linear-gradient(180deg,#bf3a2b,#8b291f);border-color:#c9a35e;color:#fff6e8;}
+.opt.sel .lt{color:#ffe9c4;}
+.quiz-foot{color:#8d7a68;}
 
-.res-name{color:#2c1f24;}
-.name-seal{background:linear-gradient(180deg,#d4627c,#b03a5a);color:#fff7f8;}
-.res-gua{color:#c9546f;letter-spacing:.30em;}
-.res-slogan{color:#9a8188;}
-.rule{background:linear-gradient(90deg,transparent,rgba(201,84,111,.35),transparent);}
-.res-body p{color:rgba(44,31,36,.90);}
-.expand{color:#c9546f;}
-.kw span{color:#b03a5a;border:1px solid rgba(201,84,111,.38);background:rgba(201,84,111,.06);}
-.dimrow .bar i{background:#c9546f;}
-.dimrow .bar b{background:#e8a0b2;}
-.check.on .box{background:linear-gradient(180deg,#d4627c,#b03a5a);border-color:#b03a5a;}
-.box{border:1px solid rgba(201,84,111,.45);color:#fbf4f1;}
-.share-panel{background:#fff8f6;}
-.share-box{background:rgba(44,31,36,.05);border:1px solid rgba(44,31,36,.14);color:#9a8188;}
-.toast{background:#c9546f;color:#fff;}
+/* ---------- 结果 ---------- */
+.result{position:relative;}
+.res-gua{color:#c9a35e;letter-spacing:.30em;}
+.res-name{color:#f6ead6;}
+.name-seal{background:linear-gradient(180deg,#c0392b,#8b291f);color:#fff6e8;}
+.res-slogan{color:#c0a888;}
+.rule{background:linear-gradient(90deg,transparent,rgba(201,163,94,.45),transparent);}
+.res-body p{color:rgba(241,229,208,.90);}
+.expand{color:#d8b06a;}
+.kw span{color:#e0bd7d;border:1px solid rgba(201,163,94,.40);background:rgba(201,163,94,.06);}
+.dims{border-top:1px solid rgba(241,229,208,.14);}
+.dims summary{color:#a28d74;}
+.dims summary:after{color:#c9a35e;}
+.dimrow{color:#8d7a68;}
+.dimrow .bar{background:rgba(241,229,208,.10);}
+.dimrow .bar i{background:#c9a35e;}
+.dimrow .bar b{background:#b23a2b;}
+.calib{border-top:1px solid rgba(241,229,208,.14);}
+.calib h3{color:#f1e5d0;}
+.check{color:rgba(241,229,208,.90);border-bottom:1px solid rgba(241,229,208,.09);}
+.box{border:1px solid rgba(201,163,94,.45);color:#14100e;}
+.check.on .box{background:linear-gradient(180deg,#c0392b,#8b291f);border-color:#c9a35e;}
+.cta{border-top:1px solid rgba(241,229,208,.14);}
+.btn-ghost{color:#a28d74;}
+
+/* ---------- 弹窗 ---------- */
+.modal{background:rgba(6,4,3,.90);}
+.share-panel{background:#1c1512;border:1px solid rgba(201,163,94,.28);}
+.share-panel h3{color:#f6ead6;}
+.share-box{background:rgba(241,229,208,.06);border:1px solid rgba(241,229,208,.16);color:#c0a888;}
+.modal-actions .ghost{border:1px solid rgba(241,229,208,.28);color:rgba(241,229,208,.8);}
+.toast{background:#c9a35e;color:#1a1210;}
+
+/* ---------- 结果页屋檐 ---------- */
+.result{position:relative;overflow:hidden;}
+.result::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:84px;z-index:0;
+  background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 84' preserveAspectRatio='none'%3E%3Cpath d='M0,40 C40,36 58,18 96,18 L304,18 C342,18 360,36 400,40 L400,0 L0,0 Z' fill='%2324100d'/%3E%3Cpath d='M0,40 C40,36 58,18 96,18 L304,18 C342,18 360,36 400,40' fill='none' stroke='%23c9a35e' stroke-opacity='.42' stroke-width='1.2'/%3E%3C/svg%3E") center top/100% 84px no-repeat;
+  opacity:.9;
+}
+.result > *{position:relative;z-index:1;}
+
+/* 印章别再压住名字 */
+.res-name-row{gap:10px;align-items:flex-start;flex-wrap:nowrap;}
+.res-name{font-size:46px;letter-spacing:.06em;}
+.name-seal{margin-top:8px;flex:none;}
 
 </style>
 </head>
@@ -196,8 +278,8 @@ body{background:#eddcd9;}
 
   <section id="s-cover" class="screen cover active">
     <div class="topbar">
-      <div class="tiny">恋爱脑指数<br>2026</div>
-      <div class="seal serif">恋</div>
+      <div class="tiny">宫斗生存<br>2026</div>
+      <div class="seal serif">宫</div>
     </div>
     <div id="inviteHint" class="invite-hint"><span class="dot"></span>TA 想和你测测你俩的关系</div>
     <div class="ring-wrap">
@@ -205,17 +287,17 @@ body{background:#eddcd9;}
         <svg class="ring-lines" width="330" height="330" viewBox="0 0 330 330">
           <polygon points="311,165 268.2,268.2 165,311 61.8,268.2 19,165 61.8,61.8 165,19 268.2,61.8" fill="none" stroke="rgba(28,26,22,.16)" stroke-width="1"/>
         </svg>
-        <span class="tri" style="transform:translate(-50%,-50%) rotate(0deg) translate(146px) rotate(0deg)">萌</span>
-        <span class="tri" style="transform:translate(-50%,-50%) rotate(45deg) translate(146px) rotate(-45deg)">动</span>
-        <span class="tri" style="transform:translate(-50%,-50%) rotate(90deg) translate(146px) rotate(-90deg)">心</span>
-        <span class="tri" style="transform:translate(-50%,-50%) rotate(135deg) translate(146px) rotate(-135deg)">上</span>
-        <span class="tri" style="transform:translate(-50%,-50%) rotate(180deg) translate(146px) rotate(-180deg)">头</span>
-        <span class="tri" style="transform:translate(-50%,-50%) rotate(225deg) translate(146px) rotate(-225deg)">沦</span>
-        <span class="tri" style="transform:translate(-50%,-50%) rotate(270deg) translate(146px) rotate(-270deg)">陷</span>
-        <span class="tri" style="transform:translate(-50%,-50%) rotate(315deg) translate(146px) rotate(-315deg)">醒</span>
+        <span class="tri" style="transform:translate(-50%,-50%) rotate(0deg) translate(146px) rotate(0deg)">答</span>
+        <span class="tri" style="transform:translate(-50%,-50%) rotate(45deg) translate(146px) rotate(-45deg)">常</span>
+        <span class="tri" style="transform:translate(-50%,-50%) rotate(90deg) translate(146px) rotate(-90deg)">贵</span>
+        <span class="tri" style="transform:translate(-50%,-50%) rotate(135deg) translate(146px) rotate(-135deg)">嫔</span>
+        <span class="tri" style="transform:translate(-50%,-50%) rotate(180deg) translate(146px) rotate(-180deg)">妃</span>
+        <span class="tri" style="transform:translate(-50%,-50%) rotate(225deg) translate(146px) rotate(-225deg)">昭</span>
+        <span class="tri" style="transform:translate(-50%,-50%) rotate(270deg) translate(146px) rotate(-270deg)">皇</span>
+        <span class="tri" style="transform:translate(-50%,-50%) rotate(315deg) translate(146px) rotate(-315deg)">后</span>
         <div class="cover-title">
-          <h1 class="serif">恋爱脑指数</h1>
-          <div class="sub">你上头到几分</div>
+          <h1 class="serif">宫斗生存</h1>
+          <div class="sub">你能活到第几集</div>
         </div>
       </div>
     </div>
@@ -242,6 +324,7 @@ body{background:#eddcd9;}
       <div class="res-name-row"><span id="rName" class="res-name"></span><span id="rSeal" class="name-seal serif"></span></div>
       <div id="rSlogan" class="res-slogan"></div>
     </div>
+    <div class="res-portrait"><img id="resPortrait" alt=""></div>
     <div class="rule"></div>
     <div id="rBody" class="res-body"></div>
     <button id="expandBtn" class="expand" onclick="toggleBody()">展开全文 ↓</button>
@@ -303,203 +386,203 @@ body{background:#eddcd9;}
 /* ============ 类型数据 ============ */
 const TYPES = {
  "qian": {
-  "name": "没救型恋爱脑",
-  "gua": "没救",
+  "name": "掀桌娘娘",
+  "gua": "贵妃",
   "symbol": "◆",
-  "slogan": "已经没救了",
+  "slogan": "本宫不装了",
   "body": [
-   "他一发消息，你手里的事就全部可以等。",
-   "你不是不知道自己在干什么，你是知道了也不打算改。",
-   "朋友劝你，你点头，然后继续。",
-   "你的手机壁纸、歌单、外卖口味，最后都会变成他的形状。",
-   "伤是肯定会伤的。但你从来没打算只爱一点点。"
+   "你入宫第三个月就成了全宫的话题：敢当着贵妃的面把赏赐推回去。",
+   "你不吃哑巴亏，也不玩心眼。你觉得绕弯子是浪费时间，反正最后都得摊开。",
+   "你的问题从来不是脾气，是你从不挑时候。",
+   "第二十三集，你把最后一句话说完，殿门外已经有人记下了。",
+   "你死的时候还站着。这一点，宫里人后来提了很多年。"
   ],
   "kw": [
-   "秒回",
-   "全给",
-   "不设防"
+   "当场",
+   "摔了再说",
+   "不留隔夜仇"
   ],
   "checks": [
-   "手机永远为他开着声音",
-   "他一冷，你整天都不对劲",
-   "朋友说的道理你都懂，你还是那样",
-   "为他把计划改掉过不止一次",
-   "知道会受伤，还是全给"
+   "话没说完就先把态度摆出来",
+   "最受不了事情悬着",
+   "吃软不吃硬",
+   "摔完会自己收拾",
+   "下次还敢"
   ]
  },
  "xun": {
-  "name": "清醒型上头",
-  "gua": "清醒",
+  "name": "军师娘娘",
+  "gua": "皇贵妃",
   "symbol": "◇",
-  "slogan": "你知道，但你还是会",
+  "slogan": "我不急，我等你先出错",
   "body": [
-   "你比谁都清楚这段关系的走向，包括它在哪一步会崩。",
-   "你能把他的问题一条条列出来，然后继续喜欢他。",
-   "朋友说你不清醒，其实你清醒得让人心疼。",
-   "你只是不想用理智去换一个不完整的自己。",
-   "最后你会退得很体面，只有你自己知道退了多久。"
+   "你从来不第一个开口，但每次开口都在最要紧的那一句上。",
+   "你记性好。谁在哪天说过什么、谁替谁递过话，你心里有一本账。",
+   "你不是不生气，你只是把气存着，等能一次用完的时候。",
+   "你赢的方式不好看：让对手自己走到你替他留的位置上。",
+   "最后你坐得最高，也最没人敢跟你多说话。"
   ],
   "kw": [
-   "看得清",
-   "照旧",
-   "体面"
+   "记着",
+   "等",
+   "一句就够"
   ],
   "checks": [
-   "能冷静分析他，然后继续喜欢",
-   "不查手机，但什么都知道",
-   "难过的时候先自己消化完再说话",
-   "分手也分得体面",
-   "清醒地看着自己往下沉"
+   "话到嘴边先咽一下",
+   "谁欠你什么你都记得",
+   "出手一次就够",
+   "表面客气，心里有账",
+   "不解释，让结果说话"
   ]
  },
  "li": {
-  "name": "闷头型上头",
-  "gua": "闷头",
+  "name": "干活娘娘",
+  "gua": "妃",
   "symbol": "●",
-  "slogan": "不说，但一直在想",
+  "slogan": "活是我干的，赏是别人的",
   "body": [
-   "你不主动，也不表达，但你的脑子一天要绕他八十圈。",
-   "他一句随口的话，你能在夜里翻来覆去拆成三层意思。",
-   "你把喜欢过成了一件私事，连他都不知情。",
-   "别人以为你淡，只有你知道自己有多吵。",
-   "你等着他发现，等到最后他什么都没发现。"
+   "宫里一出事，第一个被叫去的总是你，因为你会。",
+   "你干完就走，从不回头要一句“辛苦”。",
+   "你以为都看在眼里。其实大家只记得最后说话的那个人。",
+   "你不是不会邀功，是觉得开口要就不值了。",
+   "第四十四集你病倒，才发现那摊活没有人接。"
   ],
   "kw": [
-   "憋着",
-   "反复想",
-   "等他说"
+   "我来",
+   "顺手",
+   "不邀功"
   ],
   "checks": [
-   "一句随口的话你能想一晚上",
-   "从不先开口，但一直在等",
-   "喜欢得很满，表现得很少",
-   "他一句话能决定你一天的心情",
-   "最后什么都没说"
+   "活是你干的，赏是别人的",
+   "被夸的时候只说“顺手”",
+   "心里骂过，嘴上没说过",
+   "下次有事还是第一个找你",
+   "不会开口要"
   ]
  },
  "gen": {
-  "name": "边界型选手",
-  "gua": "边界",
+  "name": "冷宫钉子户",
+  "gua": "贵人",
   "symbol": "▪",
-  "slogan": "喜欢，但不耽误我",
+  "slogan": "你们闹，我在这儿等风停",
   "body": [
-   "你会喜欢人，但不会为谁改掉自己那一摊生活。",
-   "该健身健身，该加班加班，他排在你日程的第三位。",
-   "有人说你不够投入，你只觉得那是基本操作。",
-   "你谈过，也伤过，所以你给自己留了一扇随时能走的后门。",
-   "你不是不爱，你是知道爱不是唯一的事。"
+   "你被贬过一次，然后就在那儿住下了，谁劝都不走。",
+   "你不争，但也不退。你把自己钉在原来的位置上。",
+   "宫里换了几茬人，你还在。位份不高，位置不挪。",
+   "你不解释，不诉苦，不给人把柄，也不给自己台阶。",
+   "第七十集，新来的小主问“那位是谁”。没人答得上来，但也没人敢动。"
   ],
   "kw": [
-   "有分寸",
-   "不迁就",
-   "留后路"
+   "不走",
+   "不解释",
+   "熬"
   ],
   "checks": [
-   "恋爱不影响我的作息和工作",
-   "从不为谁改掉原来的计划",
-   "被说“你不够投入”过",
-   "再喜欢也留一条退路",
-   "分手第二天照常上班"
+   "被误解也懒得解释",
+   "越逼你越不动",
+   "不主动，但绝不退",
+   "熬得住，也熬得起",
+   "别人以为你认了，其实你没有"
   ]
  },
  "dui": {
-  "name": "一秒上头",
-  "gua": "秒上",
+  "name": "上头答应",
+  "gua": "答应",
   "symbol": "○",
-  "slogan": "三分钟热度，三分钟沦陷",
+  "slogan": "脑子还没到，人已经冲出去了",
   "body": [
-   "你上头不用理由，可能只是他回头笑了一下。",
-   "你会在一周内把这个人想完一辈子，然后第二周开始怀疑。",
-   "你热烈、真诚、也吓人。",
-   "你的喜欢来得像海啸，退得也像。",
-   "伤你的从来不是对方，是你自己脑补出来的那个版本。"
+   "你是宫里最藏不住事的那种人，高兴和生气都写在脸上。",
+   "你对谁都热络，也被谁都利用过一两回。",
+   "你冲得快，想得晚。但你是真心的，这一点很多人知道。",
+   "第九集，你替一个刚认识没几天的人说了句话。",
+   "那句话是真的。只是说错了地方。"
   ],
   "kw": [
-   "快",
+   "直接",
    "热",
-   "脑补"
+   "不过脑"
   ],
   "checks": [
-   "三天就能喜欢上一个人",
-   "在心里已经把以后过了一遍",
-   "喜欢的时候全世界都知道",
-   "冷下来也很快",
-   "爱的是自己想象中的他"
+   "情绪全写在脸上",
+   "答应得太快",
+   "替人出头不看场合",
+   "事后才想后果",
+   "被利用了也不记仇"
   ]
  },
  "kan": {
-  "name": "心动观察期",
-  "gua": "观察",
+  "name": "传话宫女",
+  "gua": "常在",
   "symbol": "□",
-  "slogan": "我在看，你先动",
+  "slogan": "我什么都没说，都是她们自己想的",
   "body": [
-   "你心动归心动，但你会先站在旁边看三周。",
-   "你会记住他每一次的反应，再决定要不要往前一步。",
-   "别人以为你在端着，其实你在评估风险。",
-   "你不是慢热，你是不想再把时间浪费在错的人身上。",
-   "等你决定的时候，你比他认真得多。"
+   "你知道宫里所有的事，因为没人会防一个不起眼的人。",
+   "你从不主动告状。你只是“顺口提了一句”。",
+   "你说话软，落点准。别人听完，自己就把事办了。",
+   "你不站队，但每一队都用得上你。",
+   "第五十八集你换到第三任主子门下，没有人觉得奇怪。"
   ],
   "kw": [
-   "观察",
-   "评估",
-   "慢热"
+   "顺口",
+   "听得见",
+   "不站队"
   ],
   "checks": [
-   "心动之后还要再观察很久",
-   "会记住对方每一次的小反应",
-   "不愿先表白",
-   "决定了就会很认真",
-   "宁可错过，也不想选错"
+   "知道的事比说出来的多",
+   "习惯用“我也是听说”开头",
+   "谁都不得罪",
+   "消息到你这就成了工具",
+   "换过几个主子，都待得住"
   ]
  },
  "zhen": {
-  "name": "偷偷上头",
-  "gua": "暗恋",
+  "name": "老实宫女",
+  "gua": "嫔",
   "symbol": "△",
-  "slogan": "没人知道，包括他",
+  "slogan": "我什么都懂，就是不改",
   "body": [
-   "你喜欢一个人的方式，是把他的歌单听一百遍，然后什么都不说。",
-   "你会在他常去的地方绕一圈，然后假装刚好路过。",
-   "你的喜欢全是细节，可惜细节不会说话。",
-   "你把这段感情藏在心里养着，养到最后自己都累了。",
-   "有些喜欢，你真的可以喜欢到对方结婚。"
+   "你干活实在，说话实在，被人欺负了也说不出重话。",
+   "你心里清楚谁对你好、谁在利用你。你只是不改。",
+   "你信一件事：只要我做得够好，早晚有人看见。",
+   "第三十五集，你替人背了一次，那人升了。",
+   "你还是没吭声。但这次你记住了。"
   ],
   "kw": [
-   "藏",
-   "绕路",
-   "细节"
+   "实在",
+   "不吭声",
+   "记着"
   ],
   "checks": [
-   "把对方的歌单听了很多遍",
-   "会故意路过他常去的地方",
-   "从没让任何人知道（包括他）",
-   "默默做了很多，一件都没说",
-   "可以喜欢到对方结婚"
+   "委屈了先自己消化",
+   "相信做好就会被看见",
+   "不会拒绝",
+   "背过锅，也没翻脸",
+   "心里记着，嘴上不出声"
   ]
  },
  "kun": {
-  "name": "恋爱绝缘体",
-  "gua": "绝缘",
+  "name": "影子宫女",
+  "gua": "官女子",
   "symbol": "·",
-  "slogan": "不是不会，是不想",
+  "slogan": "查无此人，就是最安全的位置",
   "body": [
-   "你能一眼看穿对方的套路，然后失去兴趣。",
-   "别人说你冷，其实你只是不想再演一遍。",
-   "成年人的心动在你这里要过三道审核。",
-   "你一个人过得挺好的，这句话你是真心的。",
-   "偶尔也想有人，但想想就算了。"
+   "你在宫里待了很多年，没有人在背后议论过你。",
+   "你不显眼，不惹事，不占任何一队的位置。",
+   "每一局怎么走的你都看得清楚，你从不参与。",
+   "有人倒台的时候没人想起你，有人上位的时候也没人想起你。",
+   "第七十六集，宫门最后一次开，你还在里面。"
   ],
   "kw": [
-   "清醒",
-   "不想演",
-   "一个人挺好"
+   "不显眼",
+   "看得清",
+   "不动"
   ],
   "checks": [
-   "一眼能看穿对方的套路",
-   "被说过“你真冷”",
-   "一个人待着不难受",
-   "心动之前先过一遍风险",
-   "偶尔想有人，想想就算了"
+   "存在感低，但没吃过亏",
+   "从不主动",
+   "谁赢都不影响你",
+   "看得懂，但不说",
+   "活得最久，也最没故事"
   ]
  }
 };
@@ -508,15 +591,15 @@ const TYPES = {
 const QUESTIONS = [
  {
   "dim": "gang",
-  "q": "他三天没回你消息——",
+  "q": "【第一幕 · 储秀宫】新入宫第七日，管事姑姑分例银，到你这里少了一份——",
   "a": {
-   "t": "直接问：你是不想聊了吗",
+   "t": "当场把银子推回去：姑姑，这份少了，是漏了还是有人替我领了",
    "s": {
     "gang": 1
    }
   },
   "b": {
-   "t": "不催，看他什么时候想起我",
+   "t": "先谢恩收下，回屋把账记清楚，改天再找机会说",
    "s": {
     "song": 1
    }
@@ -524,15 +607,15 @@ const QUESTIONS = [
  },
  {
   "dim": "gang",
-  "q": "朋友说他配不上你——",
+  "q": "【第二幕 · 回廊】有人在背后传你和侍卫的闲话，你正好听见——",
   "a": {
-   "t": "当场替他辩，说你们不懂他",
+   "t": "把话原样带到她面前，问她要不要当面对一遍",
    "s": {
     "gang": 1
    }
   },
   "b": {
-   "t": "听完笑笑，回去自己消化",
+   "t": "先探口风，压得住就压，压不住再想别的",
    "s": {
     "song": 1,
     "bie": 1
@@ -541,31 +624,15 @@ const QUESTIONS = [
  },
  {
   "dim": "gang",
-  "q": "他问“周末有空吗”——",
+  "q": "【第三幕 · 正殿】管事姑姑当着一屋子人罚你跪半个时辰——",
   "a": {
-   "t": "有空，什么事都可以推",
+   "t": "跪完起身，把膝上的尘土拍干净，走过去给她看",
    "s": {
     "gang": 1
    }
   },
   "b": {
-   "t": "说看情况，其实空得很",
-   "s": {
-    "song": 1
-   }
-  }
- },
- {
-  "dim": "gang",
-  "q": "分手后第五天，你很想问他还好吗——",
-  "a": {
-   "t": "直接发过去",
-   "s": {
-    "gang": 1
-   }
-  },
-  "b": {
-   "t": "打好字，删掉",
+   "t": "跪完回屋，把这一笔记在本子上",
    "s": {
     "song": 1,
     "bie": 1
@@ -574,15 +641,47 @@ const QUESTIONS = [
  },
  {
   "dim": "gang",
-  "q": "他朋友圈出现一个你没见过的女生——",
+  "q": "【第四幕 · 御前】皇上随口夸了你一句，旁边的妃嫔脸色变了——",
   "a": {
-   "t": "直接问是谁",
+   "t": "当场谢恩，把那句话接住，接得稳稳的",
    "s": {
     "gang": 1
    }
   },
   "b": {
-   "t": "自己找线索，不问他",
+   "t": "低头说不敢当，把话让出去，让给脸色难看的那位",
+   "s": {
+    "song": 1
+   }
+  }
+ },
+ {
+  "dim": "gang",
+  "q": "【第十三幕 · 御花园】皇后的猫抓破了你的衣裳，人就在旁边——",
+  "a": {
+   "t": "当场笑着说无妨，把破口亮在显眼的位置，让她自己看见",
+   "s": {
+    "gang": 1
+   }
+  },
+  "b": {
+   "t": "谢恩退下，回去自己补，不提这件事",
+   "s": {
+    "song": 1
+   }
+  }
+ },
+ {
+  "dim": "gang",
+  "q": "【第十四幕 · 内务府】有人指认你在账上做了手脚，管事的在等你说话——",
+  "a": {
+   "t": "当场把账本翻到那一页，递过去，让人自己看",
+   "s": {
+    "gang": 1
+   }
+  },
+  "b": {
+   "t": "先认下这件事，回头再慢慢找证据",
    "s": {
     "song": 1,
     "bie": 1
@@ -590,66 +689,16 @@ const QUESTIONS = [
   }
  },
  {
-  "dim": "gang",
-  "q": "他夸你一句“今天好看”——",
-  "a": {
-   "t": "立刻回夸，热络起来",
-   "s": {
-    "gang": 1,
-    "zha": 1
-   }
-  },
-  "b": {
-   "t": "回个表情包，心里已经飞了",
-   "s": {
-    "song": 1
-   }
-  }
- },
- {
   "dim": "zha",
-  "q": "他忘了你们的纪念日——",
+  "q": "【第五幕 · 花园】有人当面阴阳你一句“妹妹好福气”——",
   "a": {
-   "t": "当场不高兴，让他知道",
+   "t": "笑着怼回去，让她当场下不来台",
    "s": {
     "zha": 1
    }
   },
   "b": {
-   "t": "说没事，心里记账",
-   "s": {
-    "bie": 1
-   }
-  }
- },
- {
-  "dim": "zha",
-  "q": "你很想他——",
-  "a": {
-   "t": "直接说“我今天很想你”",
-   "s": {
-    "zha": 1
-   }
-  },
-  "b": {
-   "t": "发一首歌，等他听懂",
-   "s": {
-    "bie": 1
-   }
-  }
- },
- {
-  "dim": "zha",
-  "q": "他突然冷下来——",
-  "a": {
-   "t": "去问清楚，到底怎么了",
-   "s": {
-    "zha": 1,
-    "mang": 1
-   }
-  },
-  "b": {
-   "t": "也冷，互相消耗",
+   "t": "笑着应下，转身把这句话传到该听见的人耳朵里",
    "s": {
     "bie": 1,
     "gou": 1
@@ -658,15 +707,51 @@ const QUESTIONS = [
  },
  {
   "dim": "zha",
-  "q": "他说“随便你”——",
+  "q": "【第六幕 · 偏殿】跟你交好的宫女被冤枉偷了东西——",
   "a": {
-   "t": "我讨厌这三个字，直接说",
+   "t": "当场替她辩到底，把话摆在明面上说",
+   "s": {
+    "zha": 1,
+    "gang": 1
+   }
+  },
+  "b": {
+   "t": "先找证据，找齐了再开口，一句话顶十句",
+   "s": {
+    "bie": 1,
+    "gou": 1
+   }
+  }
+ },
+ {
+  "dim": "zha",
+  "q": "【第七幕 · 门前】一封不该送到你手里的信，被人塞进了你的袖口——",
+  "a": {
+   "t": "当场拆开看，看完再说怎么处理",
+   "s": {
+    "zha": 1,
+    "mang": 1
+   }
+  },
+  "b": {
+   "t": "原样收好，等该来问的人来问",
+   "s": {
+    "bie": 1,
+    "gou": 1
+   }
+  }
+ },
+ {
+  "dim": "zha",
+  "q": "【第八幕 · 内务府】主子丢了东西，第一个怀疑的是你——",
+  "a": {
+   "t": "当场跪下自证，把袖子、箱笼全翻出来给她看",
    "s": {
     "zha": 1
    }
   },
   "b": {
-   "t": "沉默，然后不再说话",
+   "t": "不辩，等查那天的账，账会说话",
    "s": {
     "bie": 1
    }
@@ -674,31 +759,34 @@ const QUESTIONS = [
  },
  {
   "dim": "zha",
-  "q": "他做了件让你心动的小事——",
+  "q": "【第十五幕 · 长廊】两个嫔妃在你面前互相挤兑，都想要你站边——",
   "a": {
-   "t": "当场脸红，说出来了",
+   "t": "当场选一边，把话说死，省得以后麻烦",
    "s": {
-    "zha": 1
+    "zha": 1,
+    "gang": 1
    }
   },
   "b": {
-   "t": "记很久，但不说",
+   "t": "打圆场，两边都不得罪",
    "s": {
-    "bie": 1
+    "bie": 1,
+    "gou": 1
    }
   }
  },
  {
   "dim": "zha",
-  "q": "大吵一架之后——",
+  "q": "【第十六幕 · 夜宴】有人当众提起你的旧事，一桌人都不说话了——",
   "a": {
-   "t": "哭出来，把话说清楚",
+   "t": "当场接过话头，自己讲完，讲得比谁都狠",
    "s": {
-    "zha": 1
+    "zha": 1,
+    "mang": 1
    }
   },
   "b": {
-   "t": "躲起来，自己消化完再出现",
+   "t": "低头笑一下，让这句话自己落下去",
    "s": {
     "bie": 1
    }
@@ -706,15 +794,15 @@ const QUESTIONS = [
  },
  {
   "dim": "mang",
-  "q": "半夜两点，他突然发来一条消息——",
+  "q": "【第九幕 · 宫门】半夜宫里突然封门，说是有刺客——",
   "a": {
-   "t": "秒回",
+   "t": "立刻出去看情况，站着不动才是最危险的",
    "s": {
     "mang": 1
    }
   },
   "b": {
-   "t": "第二天早上再回",
+   "t": "回屋熄灯，把门抵好，等天亮再说",
    "s": {
     "gou": 1
    }
@@ -722,15 +810,15 @@ const QUESTIONS = [
  },
  {
   "dim": "mang",
-  "q": "他临时约你现在出来——",
+  "q": "【第十幕 · 廊下】有个能露脸的机会，但要走三个门子——",
   "a": {
-   "t": "五分钟出门",
+   "t": "现在就去，门子一个一个走，走不通再说",
    "s": {
     "mang": 1
    }
   },
   "b": {
-   "t": "说太赶了，下次吧",
+   "t": "先弄清楚这机会是谁给的、给谁看的",
    "s": {
     "gou": 1
    }
@@ -738,15 +826,15 @@ const QUESTIONS = [
  },
  {
   "dim": "mang",
-  "q": "看到一样他喜欢的东西——",
+  "q": "【第十一幕 · 小厨房】御膳房送来一份没写名字的补品——",
   "a": {
-   "t": "直接买下来送他",
+   "t": "先尝一口，热的总比凉的好",
    "s": {
     "mang": 1
    }
   },
   "b": {
-   "t": "先放着，看看再说",
+   "t": "让人验过再动，谁送的都没说清",
    "s": {
     "gou": 1
    }
@@ -754,16 +842,16 @@ const QUESTIONS = [
  },
  {
   "dim": "mang",
-  "q": "朋友说他同时在聊别人——",
+  "q": "【第十二幕 · 慈宁宫】太后要挑人去侍疾，屋里没人应声——",
   "a": {
-   "t": "马上去问，问个明白",
+   "t": "你先站出来，应下这件事",
    "s": {
     "mang": 1,
     "gang": 1
    }
   },
   "b": {
-   "t": "先观察两周",
+   "t": "等别人先站，看太后最后挑谁",
    "s": {
     "gou": 1
    }
@@ -771,31 +859,34 @@ const QUESTIONS = [
  },
  {
   "dim": "mang",
-  "q": "他提了分手——",
+  "q": "【第十七幕 · 宫道】你亲眼看见有人往井里扔了个东西——",
   "a": {
-   "t": "当晚就想去他楼下",
+   "t": "当场喊人，把这事闹到管事那里去",
    "s": {
-    "mang": 1
+    "mang": 1,
+    "zha": 1
    }
   },
   "b": {
-   "t": "挂了电话，第二天再说",
+   "t": "看清楚是谁，先不说，记着",
    "s": {
-    "gou": 1
+    "gou": 1,
+    "bie": 1
    }
   }
  },
  {
   "dim": "mang",
-  "q": "你下定决心不理他——",
+  "q": "【第十八幕 · 储秀宫】新来的小主半夜哭着敲你的门——",
   "a": {
-   "t": "三个小时后破功",
+   "t": "开门，把人让进来，先听她说完",
    "s": {
-    "mang": 1
+    "mang": 1,
+    "zha": 1
    }
   },
   "b": {
-   "t": "撑了一周",
+   "t": "隔着门问清楚是什么事，再决定开不开",
    "s": {
     "gou": 1
    }
@@ -805,42 +896,150 @@ const QUESTIONS = [
 
 /* ============ 36 关系 ============ */
 const REL = {
- "qian-qian":["内卷发动机","两个刚炸莽凑一起，互相加速，停不下来"],
- "xun-xun":["赛博相声","两个都想当逗哏，谁也不肯捧哏"],
- "li-li":["两班倒","一个干完另一个接着干，关系就是排班表"],
- "gen-gen":["飞行模式","两个人都关了信号，但都运行正常"],
- "dui-dui":["低音炮","只有震动，没有旋律，音量还在叠加"],
- "kan-kan":["吐槽群","两个人就是一个群，消息99+，行动0"],
- "zhen-zhen":["双保险","两层保障，谁出事另一个立刻接住"],
- "kun-kun":["双人屏保","画面一直在，但什么也没发生"],
- "qian-xun":["人形导航","一个报路，一个照着开"],
- "qian-li":["双人加速器","两个刚加莽，速度直接叠满"],
- "qian-gen":["单机广播","你一个人在播，对面没有听众"],
- "qian-dui":["能量过载器","一个猛冲一个猛嗨，周围人扛不住"],
- "qian-kan":["决策代购商","你替对方做决定，对方终于不用纠结了"],
- "qian-zhen":["精神外包商","你把脑子外包出去，对方全接"],
- "qian-kun":["随身充电线","不显眼，但你到哪它跟到哪"],
- "xun-li":["包工头","一个吆喝指挥，一个埋头搬砖"],
- "xun-gen":["消息黑洞","发什么都吸进去，一点回声都没有"],
- "xun-dui":["解说席","一个在场上跑，一个在旁边播"],
- "xun-kan":["茶话会","开了一下午会，啥也没解决"],
- "xun-zhen":["终身售后","你说完就走，对方负责一辈子收尾"],
- "xun-kun":["录音笔","全录下来了，一句不回，第二天也没放"],
- "li-gen":["默片","有动作，没声音，全靠字幕理解"],
- "li-dui":["庆功宴","一个把活干完，一个负责庆祝"],
- "li-kan":["打工套餐","体力活配情绪账单，一份钱两份罪"],
- "li-zhen":["双人外挂","两个不吭声的人互相给对方开挂"],
- "li-kun":["合租室友","共用一个空间，各过各的人生"],
- "gen-dui":["信号屏蔽器","对面信号满格，你这边一格都不给"],
- "gen-kan":["情绪树洞","你倒多少对方都接住，但从不回话"],
- "gen-zhen":["田螺姑娘","你睡着的时候，对方把一切都收拾好了"],
- "gen-kun":["图书馆","全场安静，各看各的，谁也不打扰谁"],
- "dui-kan":["许愿池","两个人什么愿都敢许，什么都不敢做"],
- "dui-zhen":["安全气囊","平时看不见，一出事瞬间弹出来"],
- "dui-kun":["观众席","一个在台上演，一个在台下看"],
- "kan-zhen":["情绪充电宝","对方不解决问题，但能让你重新开机"],
- "kan-kun":["暖宝宝","不说话，不发热闹，但一直是温的"],
- "zhen-kun":["承重墙","看不见，也不能没有，拆了整栋塌"]
+ "qian-qian": [
+  "两把刀对砍",
+  "谁都不让，最后一起被请出宫"
+ ],
+ "xun-xun": [
+  "两个军师",
+  "一局棋谁都不先落子，等到棋盘都干了"
+ ],
+ "li-li": [
+  "双人班表",
+  "一个干完另一个接上，你们的关系就是排班表"
+ ],
+ "gen-gen": [
+  "双人冷宫",
+  "谁也赶不走谁，各自在墙上凿自己的洞"
+ ],
+ "dui-dui": [
+  "双响炮",
+  "一起上头，一起被罚，一起不长记性"
+ ],
+ "kan-kan": [
+  "情报站",
+  "消息在你们中间来回跑，就是不落地"
+ ],
+ "zhen-zhen": [
+  "双人垫背",
+  "谁挨罚另一个顶上，谁也没怨过谁"
+ ],
+ "kun-kun": [
+  "双人屏风",
+  "一直都在那儿，谁也没注意过"
+ ],
+ "qian-xun": [
+  "刀与鞘",
+  "你负责快，她负责收"
+ ],
+ "qian-li": [
+  "将和卒",
+  "一个在前头冲，一个在后头把地扫干净"
+ ],
+ "qian-gen": [
+  "两堵墙",
+  "都在硬扛，谁也不肯先低头"
+ ],
+ "qian-dui": [
+  "火药桶",
+  "一点就炸，还互相点火"
+ ],
+ "qian-kan": [
+  "前台后台",
+  "你在前头吵，她在后头递话"
+ ],
+ "qian-zhen": [
+  "刀与盾",
+  "你砍，她挡，挡完还替你说好话"
+ ],
+ "qian-kun": [
+  "灯与影",
+  "你亮的时候她退，你灭了她在"
+ ],
+ "xun-li": [
+  "帅与卒",
+  "你出主意，她跑断腿"
+ ],
+ "xun-gen": [
+  "两座山",
+  "谁都等对方先动，等到山都老了"
+ ],
+ "xun-dui": [
+  "军师与炮灰",
+  "你算得准，她冲得早"
+ ],
+ "xun-kan": [
+  "谋与谍",
+  "你定方向，她传消息，配合得很脏"
+ ],
+ "xun-zhen": [
+  "谋与实",
+  "你布局，她干活，功劳最后有她一半"
+ ],
+ "xun-kun": [
+  "明与暗",
+  "你在明处收网，她在暗处看着"
+ ],
+ "li-gen": [
+  "两块砖",
+  "谁也撬不动谁，凑一起就是一堵墙"
+ ],
+ "li-dui": [
+  "工与炮",
+  "一个埋头干，一个到处点"
+ ],
+ "li-kan": [
+  "手和耳",
+  "你干活，她听风"
+ ],
+ "li-zhen": [
+  "双人分摊",
+  "活你们分，委屈你们也分"
+ ],
+ "li-kun": [
+  "承重与阴影",
+  "你撑着，她躲在你后面"
+ ],
+ "gen-dui": [
+  "冰山与火",
+  "一个不动，一个烧，烧到最后自己灭了"
+ ],
+ "gen-kan": [
+  "井与井绳",
+  "你沉，她打水，谁也没多话"
+ ],
+ "gen-zhen": [
+  "两块垫脚石",
+  "都被人踩着，还互相垫一下"
+ ],
+ "gen-kun": [
+  "两个隐形人",
+  "一个钉在原地，一个压根不想被看见"
+ ],
+ "dui-kan": [
+  "点火与传火",
+  "你炸，她把火苗带到别处去"
+ ],
+ "dui-zhen": [
+  "闯祸与善后",
+  "你冲，她收，收完还被骂"
+ ],
+ "dui-kun": [
+  "戏与观众",
+  "你演，她看，谁也不点破"
+ ],
+ "kan-zhen": [
+  "嘴与手",
+  "你传话，她干活，配合得稳"
+ ],
+ "kan-kun": [
+  "风与墙",
+  "你到处走，她哪儿也不去，但都知道"
+ ],
+ "zhen-kun": [
+  "双人长工",
+  "一个明着干，一个暗着撑，都没人记得"
+ ]
 };
 
 /* ============ 64 卦名 ============ */
@@ -859,14 +1058,14 @@ const HEX = [
 
 
 const NATURE={
- "qian": "指数 96%",
- "xun": "指数 82%",
- "li": "指数 74%",
- "gen": "指数 41%",
- "dui": "指数 88%",
- "kan": "指数 63%",
- "zhen": "指数 70%",
- "kun": "指数 12%"
+ "qian": "活到第 23 集",
+ "xun": "活到第 76 集",
+ "li": "活到第 44 集",
+ "gen": "活到第 70 集",
+ "dui": "活到第 9 集",
+ "kan": "活到第 58 集",
+ "zhen": "活到第 35 集",
+ "kun": "活到第 76 集（大结局）"
 };
 const PATTERN={qian:"111",xun:"110",li:"101",gen:"100",dui:"011",kan:"010",zhen:"001",kun:"000"};
 
@@ -909,7 +1108,7 @@ function drawQuestions(){
 }
 const TIE={
  "gang": {
-  "q": "最后一道，凭直觉：你更常后悔哪一种——",
+  "q": "最后一题，凭直觉：你更常后悔哪一种——",
   "a": {
    "t": "当时没开口",
    "s": {
@@ -917,29 +1116,29 @@ const TIE={
    }
   },
   "b": {
-   "t": "当时说得太重",
+   "t": "当时说太重了",
    "s": {
     "gang": 1
    }
   }
  },
  "zha": {
-  "q": "最后一道，凭直觉：情绪上来的时候——",
+  "q": "最后一题，凭直觉：气上来的时候你更像——",
   "a": {
-   "t": "当场就露出来",
+   "t": "当场发作，谁都看得见",
    "s": {
     "zha": 1
    }
   },
   "b": {
-   "t": "咽回去，自己消化",
+   "t": "咽回去，自己记账",
    "s": {
     "bie": 1
    }
   }
  },
  "mang": {
-  "q": "最后一道，凭直觉：一件没把握的事——",
+  "q": "最后一题，凭直觉：一件没把握的事摆在面前——",
   "a": {
    "t": "先做了再说",
    "s": {
@@ -1088,7 +1287,7 @@ function makeCard(){
   ctx.strokeStyle="rgba(28,26,22,.16)";ctx.lineWidth=1;ctx.strokeRect(58,58,W-116,H-116);
   ctx.textAlign="left";
   ctx.fillStyle="#7d766a";ctx.font='24px "PingFang SC",sans-serif';
-  ctx.fillText(`恋爱脑指数 · ${t.gua}`,100,118);
+  ctx.fillText(`宫斗生存 · ${t.gua}`,100,118);
   // seal
   ctx.fillStyle="#b03a2e";ctx.fillRect(W-136,88,44,44);
   ctx.fillStyle="#f2ebdd";ctx.font='24px "Songti SC",serif';ctx.textAlign="center";
@@ -1112,7 +1311,7 @@ function makeCard(){
   ctx.textAlign="center";
   ctx.strokeStyle="rgba(28,26,22,.14)";ctx.beginPath();ctx.moveTo(100,1290);ctx.lineTo(W-100,1290);ctx.stroke();
   ctx.fillStyle="#7d766a";ctx.font='22px "PingFang SC",sans-serif';
-  ctx.fillText("恋爱脑指数 · 你上头到几分",W/2,1338);
+  ctx.fillText("宫斗生存 · 你能活到第几集",W/2,1338);
   cardDataURL=c.toDataURL("image/png");
   $("cardImg").src=cardDataURL;
   $("m-card").classList.add("on");
@@ -1140,7 +1339,7 @@ function wrapText(ctx,text,x,y,maxWidth,lineHeight){
 function downloadCard(){
   if(!cardDataURL)return;
   const a=document.createElement("a");
-  a.href=cardDataURL;a.download=`恋爱脑指数-${TYPES[myType].name}.png`;a.click();
+  a.href=cardDataURL;a.download=`宫斗生存-${TYPES[myType].name}.png`;a.click();
 }
 
 function relCta(){
@@ -1190,62 +1389,80 @@ function restart(){location.href=location.origin+location.pathname;}
 })();
 </script>
 <script>
-/* 恋爱脑 · 结果卡（无立绘，突出指数） */
+/* 角色卡片：带 AI 立绘的版本（build_test2.py 注入，覆盖原来的 makeCard） */
 (function () {
-  makeCard = function () {
+  // 立绘按需加载：首屏不拉图（页面 40KB 秒开），点「生成卡片」时才取当前这一张
+  window.__PORTRAITS = {};
+  function loadPortrait(key, cb) {
+    if (window.__PORTRAITS[key]) { cb(window.__PORTRAITS[key]); return; }
+    var im = new Image();
+    im.onload = function () { window.__PORTRAITS[key] = im; cb(im); };
+    im.onerror = function () { cb(null); };
+    im.src = "assets/types/" + key + ".jpg";
+  }
+
+  makeCard = function () { drawCard(false); };
+  function drawCard(retried) {
     if (selected.length === 0) { toast("先选一条最像你的"); return; }
     var t = TYPES[myType];
     var lines = selected.slice(0, 3).sort(function (a, b) { return a - b; }).map(function (i) { return t.checks[i]; });
     var c = $("cardCanvas"), ctx = c.getContext("2d");
     var W = 1080, H = 1440;
 
-    ctx.fillStyle = "#fbf4f1"; ctx.fillRect(0, 0, W, H);
-    for (var y = 0; y < H; y += 4) { ctx.fillStyle = "rgba(44,31,36,.016)"; ctx.fillRect(0, y, W, 1); }
-    ctx.strokeStyle = "#c9546f"; ctx.lineWidth = 3; ctx.strokeRect(40, 40, W - 80, H - 80);
-    ctx.strokeStyle = "rgba(44,31,36,.12)"; ctx.lineWidth = 1; ctx.strokeRect(56, 56, W - 112, H - 112);
+    // 底：宣纸
+    ctx.fillStyle = "#f2ebdd"; ctx.fillRect(0, 0, W, H);
+    for (var y = 0; y < H; y += 4) { ctx.fillStyle = "rgba(28,26,22,.018)"; ctx.fillRect(0, y, W, 1); }
+    ctx.strokeStyle = "#b03a2e"; ctx.lineWidth = 3; ctx.strokeRect(40, 40, W - 80, H - 80);
+    ctx.strokeStyle = "rgba(28,26,22,.14)"; ctx.lineWidth = 1; ctx.strokeRect(56, 56, W - 112, H - 112);
 
+    // 立绘（没加载好就先画一版没有图的，图到了重画）
+    var img = window.__PORTRAITS[myType];
+    var px = 230, py = 96, pw = 620, ph = 760;
+    if (img) {
+      ctx.save();
+      ctx.beginPath(); ctx.rect(px, py, pw, ph); ctx.clip();
+      var r = Math.max(pw / img.width, ph / img.height);
+      var dw = img.width * r, dh = img.height * r;
+      ctx.drawImage(img, px + (pw - dw) / 2, py + (ph - dh) / 2, dw, dh);
+      ctx.restore();
+      ctx.strokeStyle = "#c9a35e"; ctx.lineWidth = 2; ctx.strokeRect(px, py, pw, ph);
+    }
+
+    // 文字
     ctx.textAlign = "center";
-    ctx.fillStyle = "#9a8188"; ctx.font = '28px "PingFang SC",sans-serif';
-    ctx.fillText("恋爱脑指数", W / 2, 190);
+    ctx.fillStyle = "#7d766a"; ctx.font = '28px "PingFang SC",sans-serif';
+    ctx.fillText(t.gua + " · " + NATURE[myType], W / 2, 942);
+    ctx.fillStyle = "#1c1a16"; ctx.font = '76px "Songti SC","STSong",serif';
+    ctx.fillText(t.name, W / 2, 1034);
+    ctx.fillStyle = "#7d766a"; ctx.font = '30px "PingFang SC",sans-serif';
+    ctx.fillText(t.slogan, W / 2, 1092);
 
-    // 大百分比
-    ctx.fillStyle = "#c9546f"; ctx.font = '220px "Songti SC","STSong",serif';
-    ctx.fillText(NATURE[myType].replace("指数 ", ""), W / 2, 420);
+    ctx.textAlign = "left"; ctx.fillStyle = "#1c1a16"; ctx.font = '28px "PingFang SC",sans-serif';
+    lines.forEach(function (ln, i) { ctx.fillText("· " + ln, 200, 1176 + i * 46); });
 
-    // 名称
-    ctx.fillStyle = "#2c1f24"; ctx.font = '80px "Songti SC","STSong",serif';
-    ctx.fillText(t.name, W / 2, 560);
+    ctx.textAlign = "center"; ctx.fillStyle = "#b03a2e"; ctx.font = '22px "PingFang SC",sans-serif';
+    ctx.fillText("宫斗生存 · 你能活到第几集", W / 2, 1318);
+    ctx.fillStyle = "#7d766a"; ctx.font = '24px "PingFang SC",sans-serif';
+    ctx.fillText("小红书 @测测 · 号 5002642509", W / 2, 1366);
 
-    // 判词
-    ctx.fillStyle = "#9a8188"; ctx.font = '34px "PingFang SC",sans-serif';
-    ctx.fillText(t.slogan, W / 2, 620);
+    // 右上角印章
+    ctx.fillStyle = "#b03a2e"; ctx.fillRect(W - 150, 86, 64, 64);
+    ctx.fillStyle = "#f2ebdd"; ctx.font = '30px "Songti SC",serif'; ctx.textAlign = "center";
+    ctx.fillText(String(t.gua).slice(0, 1), W - 118, 128);
 
-    // 分隔
-    ctx.strokeStyle = "rgba(201,84,111,.35)"; ctx.lineWidth = 1;
-    ctx.beginPath(); ctx.moveTo(300, 690); ctx.lineTo(780, 690); ctx.stroke();
-
-    // 勾选的三条
-    ctx.textAlign = "left"; ctx.fillStyle = "#2c1f24"; ctx.font = '34px "PingFang SC",sans-serif';
-    lines.forEach(function (ln, i) { ctx.fillText("· " + ln, 230, 780 + i * 62); });
-
-    // 底部
-    ctx.textAlign = "center";
-    ctx.fillStyle = "#c9546f"; ctx.font = '26px "PingFang SC",sans-serif';
-    ctx.fillText("恋爱脑指数 · 你上头到几分", W / 2, 1290);
-    ctx.fillStyle = "#9a8188"; ctx.font = '26px "PingFang SC",sans-serif';
-    ctx.fillText("小红书 @今天戴了什么链儿 · 号 5002642509", W / 2, 1340);
-
-    // 印章
-    ctx.fillStyle = "#c9546f"; ctx.fillRect(W - 150, 86, 64, 64);
-    ctx.fillStyle = "#fff7f8"; ctx.font = '30px "Songti SC",serif'; ctx.textAlign = "center";
-    ctx.fillText(String(t.name).slice(0, 2), W - 118, 128);
+    if (!img && !retried) {
+      loadPortrait(myType, function () { drawCard(true); });
+    }
 
     cardDataURL = c.toDataURL("image/png");
     $("cardImg").src = cardDataURL;
     setTimeout(function () { $("m-card").classList.add("on"); }, 30);
-  };
+  }
 })();
 
+</script>
+<script>
+(function(){var _rr=renderResult;renderResult=function(){_rr.apply(null,arguments);var im=document.getElementById('resPortrait');if(im&&myType)im.src='assets/types/'+myType+'.jpg';};})();
 </script>
 <script src="config.js"></script>
 <script src="tracker.js"></script>
